@@ -1,0 +1,176 @@
+.button {
+  position: fixed !important;
+  right: 20px;
+  top: 5em;
+  width: 30px;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: #ea4f4f;
+  border: 1px solid #ea4f4f;
+  svg {
+    margin: 0 !important;
+  }
+}
+
+.search {
+  margin: 1em;
+  border: 1px solid #ea4f4f;
+  border-radius: 21px;
+}
+.musicBox {
+  width: 200px;
+  height: 100px;
+  box-sizing: border-box;
+  position: relative;
+  transform-style: preserve-3d;
+  transform: rotateY(25deg) rotateX(355deg) rotateZ(357deg);
+  /*设置动画 三者分别为：动画名 执行一次时间 执行方式*/
+  //animation: rotateanimation 5s ease;
+  //animation-iteration-count: infinite;/*令动画无限执行下去*/
+  //animation-timing-function: linear;/*匀速*/
+  margin:200px auto;
+  &>div{
+    position: absolute;
+  }
+  .front {
+    width: 150px;
+    height: 300px;
+    transform: translateZ(75px);
+    background:linear-gradient(to right, #bd3d13, #560200, #741b03,  #bd3d13, #560200);
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    .playBtn {
+      position: absolute;
+      width: 10px;
+      height: 10px;
+      background: #58bc58;
+      border-radius: 50%;
+      top: 10px;
+      right: 10px;
+    }
+    .stopBtn {
+      position: absolute;
+      width: 10px;
+      height: 10px;
+      background: #ef2525;
+      border-radius: 50%;
+      top: 10px;
+      right: 10px;
+    }
+    .minC {
+      width: 80px;
+      height: 80px;
+      background: #1a1010;
+      border-radius: 50%;
+      margin-bottom: 30px;
+      box-shadow: 0 0 0 8px #fff;
+    }
+    .openMinC {
+      width: 80px;
+      height: 80px;
+      background: #1a1010;
+      border-radius: 50%;
+      margin-bottom: 30px;
+      box-shadow: 0 0 0 8px #fff;
+      animation: openMin .5s ease;
+      animation-iteration-count: infinite;/*令动画无限执行下去*/
+      animation-timing-function: linear;/*匀速*/
+    }
+    .bigC {
+      width: 120px;
+      height: 120px;
+      background: #1a1010;
+      border-radius: 50%;
+      box-shadow: 0 0 0 8px #fff inset;
+    }
+    .openBigC {
+      width: 120px;
+      height: 120px;
+      background: #1a1010;
+      border-radius: 50%;
+      box-shadow: 0 0 0 8px #fff inset;
+      animation: openBig .5s ease;
+      animation-iteration-count: infinite;/*令动画无限执行下去*/
+      animation-timing-function: linear;/*匀速*/
+    }
+  }
+  .bottom {
+    width: 150px;
+    height: 150px;
+    transform: rotateX(270deg) translateZ(225px);
+    background:#bd3d13;
+    border-radius: 10px;
+  }
+  .back {
+    width: 150px;
+    height: 300px;
+    transform: translateZ(-75px);
+    background:#bd3d13;
+    border-radius: 10px;
+  }
+  .top {
+    width: 150px;
+    height: 150px;
+    transform: rotateX(90deg) translateZ(75px);
+    background:linear-gradient(30deg, #bd3d13, #560200, #741b03,  #bd3d13, #560200);
+    border-radius: 10px;
+  }
+  .left {
+    width: 150px;
+    height: 300px;
+    transform: rotateY(270deg) translateZ(75px);
+    background:linear-gradient(-75deg, #bd3d13, #560200, #741b03,  #bd3d13, #560200);
+    border-radius: 10px;
+  }
+  .right {
+    width: 150px;
+    height: 300px;
+    transform: rotateY(90deg) translateZ(75px);
+    background:linear-gradient(90deg, #bd3d13, #560200, #741b03,  #bd3d13, #560200);
+    border-radius: 10px;
+  }
+  @keyframes openBig{
+    0%{
+      width: 120px;
+      height: 120px;
+      box-shadow: 0 0 3px 8px #fff inset;
+    }
+    100%{
+      width: 130px;
+      height: 130px;
+      box-shadow: 0 0 0 8px #fff inset;
+    }
+  }
+  @keyframes openMin{
+    0%{
+      width: 80px;
+      height: 80px;
+      box-shadow: 0 0 3px 8px #fff;
+    }
+    100%{
+      width: 85px;
+      height: 85px;
+      box-shadow: 0 0 0 8px #fff;
+    }
+  }
+}
+.listButton {
+  width: 30px;
+  height: 30px;
+  padding: 0;
+  margin: 0;
+  position: fixed;
+  top: 5em;
+  left: 20px;
+  background: #ef2525;
+  img{
+    width: 20px;
+    height: 20px;
+  }
+}
