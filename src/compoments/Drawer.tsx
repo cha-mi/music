@@ -1,5 +1,5 @@
 import './Drawer.less'
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 
 export default function Drawer(props: any) {
   const [open, setOpen] = useState(props.open)
@@ -13,15 +13,25 @@ export default function Drawer(props: any) {
   const style = {
     ...props.style,
     ...pos,
-    width: open? props.style.width : 0 ,
+  }
+  const drawerRef = useRef(null)
+  const setHeight = () => {
+    // @ts-ignore
+    drawerRef.current.style.height = '100%'
   }
   useEffect(() => {
     setOpen(props.open)
   }, [props.open])
+  useEffect(() => {
+    window.addEventListener('resize', setHeight, false)
+    return () => {
+      window.removeEventListener('resize', setHeight)
+    }
+  })
   return (
     <>
       <div className="my-drawer-remark" onClick={props.openChange} style={{display: open ? 'block' : 'none'}}/>
-      <div className="my-drawer" style={style}>
+      <div className="my-drawer" ref={drawerRef} style={style}>
         {props.children}
       </div>
     </>
